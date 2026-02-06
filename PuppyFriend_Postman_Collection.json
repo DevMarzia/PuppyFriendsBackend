@@ -1,0 +1,655 @@
+{
+  "info": {
+    "_postman_id": "b07cf20a-9153-4429-946a-b0c8109b6a35",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50524988",
+    "_collection_link": "https://go.postman.co/collection/50524988-b07cf20a-9153-4429-946a-b0c8109b6a35?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "PuppyFriendBackend Project",
+      "item": [
+        {
+          "name": "Auth",
+          "item": [
+            {
+              "name": "Login Admin",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"mario.rossi@example.com\",\r\n    \"password\": \"admin123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Login Utente",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"maria.verdi@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Animali",
+          "item": [
+            {
+              "name": "Aggiungi Animale",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDMyMjQyNywiZXhwIjoxNzcwNDA4ODI3fQ.uYZV0nk7HHt2q-CQg6lkg92zQNZPYoSE39NX2cp7o54",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "file",
+                    "value": "",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Rex\",\r\n    \"breed\": \"Pastore Tedesco\",\r\n    \"age\": 5,\r\n    \"status\": \"DISPONIBILE\",\r\n    \"sizeLabel\": \"Grande\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/animals",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "animals"
+                  ],
+                  "query": [
+                    {
+                      "key": "file",
+                      "value": null,
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Lista Animali",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/animals",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "animals"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Filtro Animali",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDM0NjcwMywiZXhwIjoxNzcwNDMzMTAzfQ.7UnCzD9WRIgzasKkjJ_T4jDAq4Dl-7NTG_n5dl98yEU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/animals?status=DISPONIBILE&size=Grande",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "animals"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "DISPONIBILE"
+                    },
+                    {
+                      "key": "size",
+                      "value": "Grande"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Foto Animale",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDMzNjA0MCwiZXhwIjoxNzcwNDIyNDQwfQ.sj7P2YbTuZUDmkaO_r3lz9ErbNepR-kQ5T01pBjPx_g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "uuid": "e5bc0afc-5ded-4de4-ae73-22965eb8e35a",
+                      "src": "pippo.jfif"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/animals/4/upload",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "animals",
+                    "4",
+                    "upload"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Utenti",
+          "item": [
+            {
+              "name": "Registrazione Admin",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"Mario\",\r\n    \"lastName\": \"Rossi\",\r\n    \"email\": \"mario.rossi@example.com\",\r\n    \"password\": \"admin123\",\r\n    \"roles\": [\"admin\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Registrazione Utente",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"Maria\",\r\n    \"lastName\": \"Verdi\",\r\n    \"email\": \"maria.verdi@example.com\",\r\n    \"password\": \"password123\",\r\n    \"roles\": [\"adopter\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Aggiorna Foto Profilo",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDM0NjcwMywiZXhwIjoxNzcwNDMzMTAzfQ.7UnCzD9WRIgzasKkjJ_T4jDAq4Dl-7NTG_n5dl98yEU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDMyODU5MSwiZXhwIjoxNzcwNDE0OTkxfQ.iDaeyiU9Dy8OGAP_SrTXIW_6NNDO1puEwPeWL27jvxk",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file ",
+                      "type": "file",
+                      "uuid": "fcb1f68a-365f-4b74-8ac0-151bfd111241",
+                      "src": "avatar_admin.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/users/me/upload-photo",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "users",
+                    "me",
+                    "upload-photo"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Conferma registrazione",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"prova\",\r\n    \"lastName\": \"invio email\",\r\n    \"email\": \"test.mail2@example.com\",\r\n    \"password\": \"password123\",\r\n    \"roles\": [\"adopter\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Gestione Errori",
+          "item": [
+            {
+              "name": "Animale non trovato ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/animals/999",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "animals",
+                    "999"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Errore Creazione Animale Taglia",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDMzNjA0MCwiZXhwIjoxNzcwNDIyNDQwfQ.sj7P2YbTuZUDmkaO_r3lz9ErbNepR-kQ5T01pBjPx_g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Polly\",\r\n    \"breed\": \"Meticcio\",\r\n    \"age\": 2,\r\n    \"status\": \"DISPONIBILE\",\r\n    \"sizeLabel\": \"Gigantesco\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/animals",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "animals"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Creazione Animale campi vuoti",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDMzNjA0MCwiZXhwIjoxNzcwNDIyNDQwfQ.sj7P2YbTuZUDmkaO_r3lz9ErbNepR-kQ5T01pBjPx_g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"\",\r\n    \"breed\": \"American Staff\",\r\n    \"age\": -2,\r\n    \"status\": \"DISPONIBILE\",\r\n    \"sizeLabel\": \"Media\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/animals",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "animals"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Veterinario",
+          "item": [
+            {
+              "name": "Creazione Cartella Clinica",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDMzNjA0MCwiZXhwIjoxNzcwNDIyNDQwfQ.sj7P2YbTuZUDmkaO_r3lz9ErbNepR-kQ5T01pBjPx_g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"bloodType\": \"DEA 1.1\",\r\n  \"allergies\": \"Nessuna\",\r\n  \"sterilized\": true,\r\n  \"notes\": \"Cane molto tranquillo, si trova bene in compagnia dei gatti.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/vet/animals/4/record",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "vet",
+                    "animals",
+                    "4",
+                    "record"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Registrazione Vaccini",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDMzNjA0MCwiZXhwIjoxNzcwNDIyNDQwfQ.sj7P2YbTuZUDmkaO_r3lz9ErbNepR-kQ5T01pBjPx_g",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"vaccineName\": \"Antirabbica Annuale\",\r\n  \"vaccinationDate\": \"2024-02-06\",\r\n  \"nextDueDate\": \"2025-02-06\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/vet/records/1/vaccines",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "vet",
+                    "records",
+                    "1",
+                    "vaccines"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Scheda Completa Animale",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDM0NjcwMywiZXhwIjoxNzcwNDMzMTAzfQ.7UnCzD9WRIgzasKkjJ_T4jDAq4Dl-7NTG_n5dl98yEU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/vet/animals/4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "vet",
+                    "animals",
+                    "4"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Giorno della Visita",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc3MDM0NjcwMywiZXhwIjoxNzcwNDMzMTAzfQ.7UnCzD9WRIgzasKkjJ_T4jDAq4Dl-7NTG_n5dl98yEU",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"visitDate\": \"2024-03-10\",\r\n  \"vetName\": \"Dr. House\",\r\n  \"diagnosis\": \"Controllo generale\",\r\n  \"cost\": 50.00\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/vet/records/2/visits",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "vet",
+                    "records",
+                    "2",
+                    "visits"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
