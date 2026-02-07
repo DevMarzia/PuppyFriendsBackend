@@ -67,19 +67,19 @@ SPRING_MAIL_PASSWORD=tua_password_mailtrap
 ###  3. Installazione e Avvio
 Esegui i seguenti comandi nel terminale:
 
-# 1. Clona il repository
+1. **Clona il repository**
 ```
 git clone https://github.com/devmarzia/puppyfriendsbackend
 ```
-# 2. Entra nella cartella
+2. **Entra nella cartella**
 ```
 cd PuppyFriendsBackend
 ```
-# 3. Scarica le dipendenze e compila
+3. **Scarica le dipendenze e compila**
 ```
 mvn clean install
 ```
-# 4. Avvia l'applicazione
+4. **Avvia l'applicazione**
 ```
 mvn spring-boot:run
 ```
